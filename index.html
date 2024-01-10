@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maktab Sharif Bootcamp - HW No. 1</title>
+    <link rel="stylesheet" href="assets/styles/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+    />
+  </head>
+  <body>
+    <header id="header" class="header">
+      <h1>Maktab Sharif - React Bootcamp 109</h1>
+      <h2>HW No. 1</h2>
+      <div class="author">
+        <img
+          class="author-image"
+          src="assets/pics/morty.png"
+          alt="author-pic"
+        />
+        <p class="author-name">Koushyar Heidari Bateni</p>
+      </div>
+    </header>
+    <main>
+      <div>
+        <div class="qanda">
+          <div class="question">
+            <p>Q1 - Determine the type of variables below:</p>
+            <ol type="a">
+              <li>let length = 16;</li>
+              <li>let myName = "Jack";</li>
+              <li>let number = "120";</li>
+              <li>var y = "undefined";</li>
+              <li>let z = undefined;</li>
+              <li>let isAdmin = true;</li>
+              <li>const array = [1, 2, "John", true, undefined];</li>
+              <li>const x = { firstName: "ali", lastName: "hosseini", };</li>
+            </ol>
+          </div>
+          <button class="revealButton">Show My Answer</button>
+          <div class="answer hidden">
+            <ol type="a">
+              <li>"length" is of type "Number".</li>
+              <li>"myName" is of type "String".</li>
+              <li>"number" is of type "String".</li>
+              <li>"y" is of type "String".</li>
+              <li>"z" is of type "Undefined".</li>
+              <li>"isAdmin" is of type "Boolean".</li>
+              <li>"array" is of type "Object".</li>
+              <li>"x" is of type "Object".</li>
+            </ol>
+          </div>
+        </div>
+        <div class="qanda">
+          <div class="question">
+            <p>
+              Q2 - Write a program that takes an input from the user and shows
+              its type as an alert.
+            </p>
+          </div>
+          <button class="revealButton">Show My Answer</button>
+          <div class="answer hidden">
+            <textarea id="userCode2" rows="10" cols="100">
+const userInput = prompt("Please enter something: ");
+alert(`The thing you entered is of type: ${typeof userInput}`);
+            </textarea>
+            <button class="runButton">Run Code</button>
+          </div>
+        </div>
+        <div class="qanda">
+          <div class="question">
+            <p>
+              Q3 - Write a program that takes the user name from input, asks the
+              user if that is the correct name and finally outputs hello
+              \‘name\’ as an alert.
+            </p>
+          </div>
+          <button class="revealButton">Show My Answer</button>
+          <div class="answer hidden">
+            <textarea id="userCode3" rows="10" cols="100">
+const userName = prompt("Please enter you name:", "User Name");
+const userNameConfirmation = confirm(
+`Do you confirm that your name is ${userName}?`
+);
+if (userNameConfirmation) alert(`hello ${userName}`);
+            </textarea>
+            <button class="runButton">Run Code</button>
+          </div>
+        </div>
+        <div class="qanda">
+          <div class="question">
+            <p>
+              Q4 - Write a program that takes 2 numbers as input and output the
+              sum of these 2 numbers as an alert. (pay attention to the input
+              type)
+            </p>
+          </div>
+          <button class="revealButton">Show My Answer</button>
+          <div class="answer hidden">
+            <textarea id="userCode4" rows="20" cols="100">
+const num1 = getValidNumber();
+const num2 = getValidNumber();
+alert(`The sum of these 2 numbers is ${num1 + num2}`);
+                
+function getValidNumber() {
+  let userInput;
+  while (true) {
+      userInput = prompt("Enter a number:");
+      if (isNaN(userInput) || userInput.trim() === "") {
+        alert("Your input is not a number. Try again!");
+      } else {
+        break;
+      }
+  }
+  return Number(userInput);
+}                
+            </textarea>
+            <button class="runButton">Run Code</button>
+          </div>
+        </div>
+        <div class="qanda">
+          <div class="question">
+            <p>Q5 - Create an HTML page with a link to google.com.</p>
+          </div>
+          <button class="revealButton">Show My Answer</button>
+          <div class="answer hidden">
+            <a href="https://www.google.com" target="_blank">Go to google</a>
+          </div>
+        </div>
+        <div class="qanda">
+          <div class="question">
+            <p>Q6 - What’s the difference between undefined, null and 0?</p>
+          </div>
+          <button class="revealButton">Show My Answer</button>
+          <div class="answer hidden">
+            <p>
+              These three are all "falsy" values but certainly are distinct
+              concepts representing different values and purposes in js.
+            </p>
+            <p>
+              "Undefined" is automatically assigned to variables that are
+              declared but not yet initialized. It is also the default value for
+              function parameters that are not assigned and object properties
+              that don't exist.
+            </p>
+            <p>
+              "Null" on the other hand is a special needs to be explicitly
+              assigned to a variable or an object property to indicate the
+              absence of a meaningful value.
+            </p>
+          </div>
+        </div>
+        <div class="qanda">
+          <div class="question">
+            <p>Q7 - What are the differences between const, let and var?</p>
+          </div>
+          <button class="revealButton">Show My Answer</button>
+          <div class="answer hidden">
+            <p>
+              In JavaScript, "const", "let", and "var" are used to declare
+              variables. Addition of "let" and "const" was one of the features
+              that came with ES6. There are Key differences between these three:
+            </p>
+
+            <ol>
+              <li>
+                "var" declarations are globally scoped or function/locally
+                scoped. The scope is global when a "var" variable is declared
+                outside a function. "var" is function scoped when it is declared
+                within a function. This means that it is available and can be
+                accessed only within that function. "var" variables can be
+                re-declared and updated. This means that we can do this within
+                the same scope and won't get an error. It's also hoisted to the
+                top of its scope.
+              </li>
+              <li>
+                "let" is block-scoped, meaning it's limited to the block,
+                statement, or expression where it is declared. It's not hoisted,
+                and you can reassign its value.
+              </li>
+              <li>
+                "const" is also block-scoped, but once a value is assigned, it
+                cannot be reassigned. It's a constant variable.
+              </li>
+            </ol>
+            <p>
+              Source for this answer hidden is a great article at
+              <a
+                href="https://www.freecodecamp.org/news/var-let-and-const-whats-the-difference/"
+                target="_blank"
+                >freecodecamp </a
+              >.
+            </p>
+          </div>
+        </div>
+        <div class="qanda">
+          <div class="question">
+            <p>
+              Q8 - What are the differences between a library and a framework?
+              Provide Examples.
+            </p>
+          </div>
+          <button class="revealButton">Show My Answer</button>
+          <div class="answer hidden">
+            <p>
+              The main difference between a library and a framework is in the
+              level of control and structure that is provided. A library gives
+              you more freedom and is used for specific tasks, while a framework
+              provides a more extensive structure and enforces certain patterns.
+            </p>
+            <p>
+              A library is a collection of pre-written code, often with a
+              specific purpose, that can be reused in various projects. A
+              library provides functions, classes, and routines that you can use
+              in your code, but it doesn't dictate the overall structure or flow
+              of your application. You call the library's functions when needed,
+              and you have more control over how you structure your code. jQuery
+              is a popular JavaScript library that simplifies tasks like DOM
+              manipulation. React is also often described as a library, not a
+              framework.
+            </p>
+            <p>
+              A framework is a more comprehensive, structured set of tools,
+              libraries, and conventions designed to help you build and organize
+              an entire application. It often includes predefined structures,
+              design patterns, and guidelines, and your code fits into the
+              framework's architecture. Angular and Vue are typically
+              categorized as a framework, not just a library.
+            </p>
+          </div>
+        </div>
+        <div class="qanda">
+          <div class="question">
+            <p>Q9 - What are the 2 main parts of an HTML file?</p>
+          </div>
+          <button class="revealButton">Show My Answer</button>
+          <div class="answer hidden">
+            <p>
+              &lt;head&gt and &lt;body&gt are the 2 main parts of an html file.
+            </p>
+          </div>
+        </div>
+        <div class="qanda">
+          <div class="question">
+            <p>
+              Q10 - Create a person object containing your first and last names.
+              Then alert first name and last name of the person object.
+            </p>
+          </div>
+          <button class="revealButton">Show My Answer</button>
+          <div class="answer hidden">
+            <textarea id="userCode10" rows="10" cols="100">
+let person = {
+    firstName: "Koushyar",
+    lastName: "Heidari Bateni",
+};
+alert("This person's first name is: \"" + person.firstName + '".');
+alert("This person's last name is: \"" + person.lastName + '".');
+            </textarea>
+            <button class="runButton">Run Code</button>
+          </div>
+        </div>
+        <div class="qanda">
+          <div class="question">
+            <p>
+              Q11 - Alert “Hello Maktab” with the help of escape characters.
+              Note: showing double quotations (“”) in the output is necessary.
+            </p>
+          </div>
+          <button class="revealButton">Show My Answer</button>
+          <div class="answer hidden">
+            <textarea id="userCode11" rows="10" cols="100">
+alert("“Hello Maktab”");
+            </textarea>
+            <button class="runButton">Run Code</button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer></footer>
+    <script src="script.js" defer></script>
+  </body>
+</html>
